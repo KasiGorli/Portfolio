@@ -4687,3 +4687,156 @@ input, select, textarea {
 		}
 
 	}
+	.about-me {
+  padding: 4rem 2rem;
+  background: var(--bg-alt);
+}
+.about-me__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+.about-me__photo img {
+  max-width: 420px;
+  border-radius: 50%;
+}
+.about-me__bio {
+  flex: 1;
+}
+
+/* === Skills Section === */
+.skills {
+  padding: 4rem 2rem;
+  background: var(--bg);
+}
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.skills__item {
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+.skills__name {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+.skills__bar {
+  position: relative;
+  height: 0.5rem;
+  background: var(--border-color);
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+.skills__bar span {
+  display: block;
+  height: 100%;
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+
+/* Responsive tweak */
+@media (max-width: 600px) {
+  .about-me__container {
+    flex-direction: column;
+    text-align: center;
+  }
+}@media (max-width: 600px) {
+  .about-me__photo img {
+    margin: 0 auto;
+  }
+}
+/* === Skills & Tech Stack Section === */
+.skills {
+  padding: 4rem 2rem;
+  background-color: var(--bg);
+  text-align: center;
+}
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+.skills__item {
+  background: var(--bg-alt);
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+.skills__item:hover {
+  transform: scale(1.05);
+}
+.skills__name {
+  display: block;
+  margin-top: 0.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.skills__item i {
+  color: var(--accent-color);
+}
+
+/* Optional: Tooltip styling (native title attribute shows on hover) */
+/* === Project Description Formatting === */
+article p {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+article p strong {
+  display: inline-block;
+  width: 180px;
+  font-weight: 600;
+  color: #14140c;
+}
+
+/* Optional: Style to highlight the entire project block */
+article {
+  padding-left: 1.2em;
+  margin-bottom: 3em;
+  background: #f9f9f9;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+article:hover {
+  background: #f3f4f411;
+}
+
+/* Optional: Icons could be added using pseudo-elements if needed later */
+.hover-highlight:hover {
+  background-color: #e6f7ff;
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 4px;
+  padding: 2px 4px;
+  cursor: pointer;
+}
+
+.project-desc {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 4px 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+.projects-grid .image.project-img img {
+  border-radius: 6px;
+  width: 100%;
+  height: auto;
+  max-height: 100px; /* ↓ reduced from 200px to 150px */
+  object-fit: cover;
+}
