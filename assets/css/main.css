@@ -4705,6 +4705,20 @@ input, select, textarea {
   flex: 1;
 }
 
+@media (max-width: 600px) {
+  .about-me__photo img {
+    max-width: 200px;
+    width: 100%;
+    margin: 0 auto; /* Centers the image */
+  }
+  .about-me__container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 /* === Skills Section === */
 .skills {
   padding: 4rem 2rem;
@@ -4824,19 +4838,73 @@ article:hover {
   cursor: pointer;
 }
 
+/* Structured project description */
 .project-desc {
   display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 4px 12px;
+  grid-template-columns: max-content 1fr;
+  row-gap: 0.3rem;
+  column-gap: 0.75rem;
   font-size: 0.95rem;
   line-height: 1.5;
-  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
+
+.project-desc .label {
+  font-weight: bold;
+}
+
+/* On small screens, stack labels on top of text */
+@media (max-width: 600px) {
+  .project-desc {
+    grid-template-columns: 1fr;
+  }
+  .project-desc .label {
+    margin-top: 0.5rem;
+  }
+}
+
 
 .projects-grid .image.project-img img {
   border-radius: 6px;
   width: 100%;
   height: auto;
-  max-height: 100px; /* ↓ reduced from 200px to 150px */
+  object-fit: auto;
+}
+/* Constrain project images */
+article .image.main img,
+article .image.fit img {
+  width: 100%;
+  height: auto;
+  max-height: 250px;   /* Adjust as needed */
   object-fit: cover;
+}
+
+/* Make images shorter on mobile */
+@media (max-width: 600px) {
+  article .image.main img,
+  article .image.fit img {
+    max-height: 150px;
+  }
+}
+
+/* Ensure all images scale within their containers */
+.about-me__photo img,
+.projects-grid img,
+article img {
+  max-width: 100%;
+  height: auto;
+}
+/* If you did not add project-img class, use these selectors */
+article .image.main img,
+article .image.fit img {
+  width: 180%;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  article .image.main img,
+  article .image.fit img {
+    max-height: 600px;
+  }
 }
